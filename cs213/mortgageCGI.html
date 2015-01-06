@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- assign10.html
+     Mortgage Calculator
+     -->
+<html lang="eng" cmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title> Mortgage Calculator </title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="assign10.js" type="text/javascript"></script>
+  </head>
+  
+  <body>
+    <h1>MORTGAGE CALCULATOR</h1>
+    <div>
+      <form action="../cgi-bin/assign10.cgi" name="data">
+        <p> <br/> APR (%):
+          <input type="text" id="apr" name="apr" maxlength="4" size="10"/>
+          <br/>
+        </p>
+        <p> Term (years):
+          <input type="text" id="term" name="term" maxlength="3" size="10"/>
+          <br/>
+        </p>
+        <p> Amount ($):
+          <input type="text" id="amount" name="amount" maxlength="10" 
+                 size="10"/>
+          <br/>
+        </p>
+        <div>
+          <input type="submit" value="Calculate!" 
+                 onsubmit="calc(); checkValues();"/>
+          <input type="reset" value="Clear"/>
+        </div>
+        <br/>
+      </form>
+    </div>
+    <br/>
+  </body>
+</html>
