@@ -5,7 +5,7 @@
 					<div class="panel-title">Welcome to McKay Smalley's Home Page</div>
 				</div>
 				<div class="panel-body">
-					<p>This site is under construction. Future development is underway...</p>
+					<h1>Hello World!</h1>
 				</div>
 			</div>
 		</div>				
