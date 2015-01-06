@@ -39,7 +39,13 @@
         </div>
         <div id="collapseThree" class="panel-collapse collapse">
             <div class="panel-body">
-                This will be a form that will email me for suggestions!
+                <form method="post" action="contact/feedback.php">
+                    First Name: <input type="text" name="first_name"/><br/><br/>
+                    Last Name: <input type="text" name="last_name"/><br/><br/>
+                    Suggestion: <br/>
+                    <textarea name="feedback" rows="5">This is not working yet...</textarea><br/>
+                    <input class="btn btn-default" type="submit" value="Email Me!"/>
+                </form>
             </div>
         </div>
     </div>
