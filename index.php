@@ -8,7 +8,7 @@
 <body>
 	<h1>Hello World</h1>
 	<p><?php 
-            echo "Right now it is " . strftime(%A, %B, %d, %Y) . " where my server is."
+            echo "Right now it is " . strftime(%A, %B, %d, %Y, time()) . " where my server is."
         ?>
     </p>
 </body>
