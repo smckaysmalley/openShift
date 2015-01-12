@@ -3,7 +3,7 @@
 
 <head>
     <title>McKay's Home Page</title>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://mckaysmalley.com/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://mckaysmalley.com/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/general.css" type="text/css" />
