@@ -17,6 +17,11 @@ body {
     animation: flip 2s;
 }
 
+.word-doc {
+    width:100%;
+    height: 500px;
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes flip {
     100% {-webkit-transform: rotate(360deg);}

@@ -1,5 +1,5 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
-<div class="col-lg-8 col-lg-offset-2">
+<div class="col-lg-6 col-md-6">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -36,4 +36,9 @@
             </a>
         </div>
     </div>
-    <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
+</div>
+<hr/>
+<div class="col-lg-6 col-md-6 center">
+    <iframe class="word-doc" src="https://onedrive.live.com/embed?cid=2FBC18EAF6E2F93E&resid=2FBC18EAF6E2F93E%2118000&authkey=APmxQK-PIdzQIE8&em=2" frameborder="0" scrolling="no"></iframe>
+</div>
+<?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
