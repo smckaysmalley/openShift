@@ -4,5 +4,25 @@ h1 {
 }
 
 body {
-    background-color: #F0F0F0);
+    background-color: #F0F0F0;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.flipper {
+    -webkit-animation: flip 2s; /* Chrome, Safari, Opera */
+    animation: flip 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes flip {
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+/* Standard syntax */
+@keyframes flip {
+    100% {transform: rotate(360deg);}
 }
