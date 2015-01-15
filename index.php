@@ -66,4 +66,20 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    Forgiveness: My Burden Was Made Light
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube-nocookie.com/embed/E7zwQ_7q-fU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>

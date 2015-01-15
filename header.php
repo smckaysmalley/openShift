@@ -12,7 +12,7 @@
     <!-- <base href="http://php-smckaysmalley.rhcloud.com/"></base> -->
 </head>
 
-<body id="body">
+<body>
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">

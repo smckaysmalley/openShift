@@ -9,7 +9,7 @@ $(document).keydown(function (keystroke) {
     }
 
     if (string == '70767380') {
-        startFlip($('#body'));
+        startFlip($('body'));
         string = "";
     }
     if (string == '8065786976')
@@ -21,6 +21,21 @@ $(document).keydown(function (keystroke) {
     {
         startFlip($('iframe'));
         startFlip($('img'));
+        string = "";
+    }
+    if (string == '668478')
+    {
+        startFlip($('.btn'));
+        string = "";
+    }
+    if (string == '657676')
+    {
+        startFlip($('.btn'));
+        startFlip($('iframe'));
+        startFlip($('img'));
+        startFlip($('.panel'));
+        startFlip($('body'));
+        startFlip($('p'));
         string = "";
     }
 });
