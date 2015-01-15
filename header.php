@@ -28,12 +28,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="">Cool Stuff</a>
+                        <li><a href="/cool_stuff">Cool Stuff</a>
                         </li>
                         <li <li role="presentation" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#assignments" role="button" aria-expanded="false">Assignments<b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="assign01">Assign 01</a>
+                                <li><a href="/assign01">Assign 01</a>
                                 </li>
                             </ul>
                         </li>

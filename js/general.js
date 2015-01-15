@@ -9,20 +9,31 @@ $(document).keydown(function (keystroke) {
     }
 
     if (string == '70767380') {
-        console.log("flipping...");
-        startFlip();
-        setTimeout(function() {stopFlip()}, 2000);
+        startFlip($('#body'));
+        string = "";
+    }
+    if (string == '8065786976')
+    {
+        startFlip($('.panel'));
+        string = "";
+    }
+    if (string == '807367')
+    {
+        startFlip($('iframe'));
+        startFlip($('img'));
         string = "";
     }
 });
 
-function startFlip()
+function startFlip(element)
 {
-    $("#body").addClass("flipper");
+    console.log("flipping...");
+    $(element).addClass("flipper");
+    setTimeout(function() {stopFlip(element)}, 2000);
 }
 
-function stopFlip()
+function stopFlip(element)
 {
-    $("#body").removeClass("flipper");
+    $(element).removeClass("flipper");
     console.log("done flipping...");
 }
