@@ -38,6 +38,11 @@ $(document).keydown(function (keystroke) {
         startFlip($('p'));
         string = "";
     }
+    if (string == '82698669828369')
+    {
+        startReverse($('body'));
+        string = "";
+    }
 });
 
 function startFlip(element)
@@ -51,4 +56,24 @@ function stopFlip(element)
 {
     $(element).removeClass("flipper");
     console.log("done flipping...");
+}
+
+var revToken = 1;
+function startReverse(element)
+{
+    console.log("reversing...");
+    if (revToken == 1)
+        $(element).addClass("reverse");
+    else if (revToken == -1)
+        $(element).addClass("reverse-back");
+          
+    setTimeout(function() {permenentReverse(element)}, 900);
+}
+
+function permenentReverse(element)
+{
+    revToken *= -1;
+    $(element).removeClass("reverse").removeClass("reverse-back");
+    $(element).css("transform", "scaleX("+revToken+")");
+    console.log("done reverse...");
 }

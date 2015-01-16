@@ -12,14 +12,14 @@ body {
     margin: 0 auto;
 }
 
-.flipper {
-    -webkit-animation: flip 2s; /* Chrome, Safari, Opera */
-    animation: flip 2s;
-}
-
 .word-doc {
     width:100%;
     height: 500px;
+}
+
+.flipper {
+    -webkit-animation: flip 2s; /* Chrome, Safari, Opera */
+    animation: flip 2s;
 }
 
 /* Chrome, Safari, Opera */
@@ -30,4 +30,34 @@ body {
 /* Standard syntax */
 @keyframes flip {
     100% {transform: rotate(360deg);}
+}
+
+.reverse {
+    -webkit-animation: rev 1s; /* Chrome, Safari, Opera */
+    animation: rev 1s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rev {
+    100% {-webkit-transform: scaleX(-1);}
+}
+
+/* Standard syntax */
+@keyframes rev {
+    100% {transform: scaleX(-1);}
+}
+
+.reverse-back {
+    -webkit-animation: revback 1s; /* Chrome, Safari, Opera */
+    animation: revback 1s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes revback {
+    100% {-webkit-transform: scaleX(1);}
+}
+
+/* Standard syntax */
+@keyframes revback {
+    100% {transform: scaleX(1);}
 }
