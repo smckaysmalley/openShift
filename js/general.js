@@ -8,27 +8,13 @@ $(document).keydown(function (keystroke) {
         console.log(string);
     }
 
-    if (string == '70767380') {
-        startFlip($('body'));
-        string = "";
-    }
-    if (string == '8065786976')
-    {
-        startFlip($('.panel'));
-        string = "";
-    }
-    if (string == '807367')
-    {
-        startFlip($('iframe'));
-        startFlip($('img'));
-        string = "";
-    }
     if (string == '668478')
     {
         startFlip($('.btn'));
         string = "";
     }
-    if (string == '657676')
+    
+    else if (string == '657676')
     {
         startFlip($('.btn'));
         startFlip($('iframe'));
@@ -38,7 +24,22 @@ $(document).keydown(function (keystroke) {
         startFlip($('p'));
         string = "";
     }
-    if (string == '82698669828369')
+    else if (string == '807367')
+    {
+        startFlip($('iframe'));
+        startFlip($('img'));
+        string = "";
+    }
+    else if (string == '70767380') {
+        startFlip($('body'));
+        string = "";
+    }
+    else if (string == '8065786976')
+    {
+        startFlip($('.panel'));
+        string = "";
+    }
+    else if (string == '82698669828369')
     {
         startReverse($('body'));
         string = "";
