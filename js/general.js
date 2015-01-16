@@ -34,6 +34,11 @@ $(document).keydown(function (keystroke) {
         startFlip($('body'));
         string = "";
     }
+    else if (string == '7265808089')
+    {
+        $('#grumpy').click();
+        string = "";
+    }
     else if (string == '8065786976')
     {
         startFlip($('.panel'));

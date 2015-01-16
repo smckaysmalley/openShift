@@ -61,3 +61,7 @@ body {
 @keyframes revback {
     100% {transform: scaleX(1);}
 }
+
+#grumpy {
+     display: none;   
+}
