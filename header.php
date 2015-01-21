@@ -3,9 +3,6 @@
 
 <head>
     <title>McKay Smalley</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://mckaysmalley.com/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/general.js"></script>
     <link rel="stylesheet" href="http://mckaysmalley.com/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="/css/general.css" type="text/css" />
     <link rel="shortcut icon" href="mountain-128.png">
@@ -13,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <main class="container">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
