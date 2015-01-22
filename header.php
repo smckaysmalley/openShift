@@ -1,4 +1,3 @@
-
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
@@ -39,10 +38,10 @@
                             </ul>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="team" rol="button" aria-expanded="false">Team Activities<b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="team" rol="button" aria-expanded="false">Class Activities<b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/activity1">Post Method</a>
-                                </li>
+                                <li><a href="/activity1">Post Method</a></li>
+                                <li><a href="/activity2">Cookies $ Sessions</a></li>
                             </ul>
                         </li>
                     </ul>
