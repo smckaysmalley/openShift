@@ -1,5 +1,6 @@
+<?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
+<div class="well">
 <?php
-require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php');
     if (isset($_POST))
     {
         if (isset($_POST['name']))
@@ -17,6 +18,6 @@ require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php');
     }
     else
         echo "Did not receive post";
-
-require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php');
 ?>
+</div>
+<?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
