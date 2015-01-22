@@ -4,8 +4,6 @@
         header("Location: /php_survey/results");
 ?>
 
-
-
 <form action="submit.php" method="POST" onsubmit="return verify();">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="panel panel-default">
