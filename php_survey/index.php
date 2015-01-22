@@ -14,23 +14,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
@@ -45,23 +45,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
@@ -76,23 +76,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
@@ -107,23 +107,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
@@ -138,23 +138,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
@@ -169,23 +169,23 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1">Bad</div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="1">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="2">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="3">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="4">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="5">
                     </div>
-                    <div class="col-lg-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
                 </div>
             </div>
         </div>
