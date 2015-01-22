@@ -7,9 +7,6 @@
     $pc = explode('->', $resorts[3]);
     $dv = explode('->', $resorts[4]);
     $va = explode('->', $resorts[5]);
-
-    if (!isset($_COOKIE['ski_survey']))
-        echo '<div class="row center"><a class="center btn btn-default" href="../">Take Survey!</a></div><br/>';
 ?>
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="panel panel-default">
@@ -112,5 +109,9 @@
         </div>
     </div>
 </div>
+<?php 
+    if (!isset($_COOKIE['ski_survey']))
+        echo '<div class="row center"><a class="center btn btn-default" href="../">Take Survey!</a></div><br/>';
+?>
 
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
