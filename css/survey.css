@@ -4,6 +4,7 @@
     height: 300px;
     width: 100%;
     position: relative;
+    background-position: top left;
 }
 
 #jackson {
@@ -11,5 +12,5 @@
 }
 
 #targhee {
-    background-image: url('http://cdn.jacksonholenet.com/images/content/14562_792_Grand_Targhee_md.jpg')
+    background-image: url('http://www.100besteverything.com/best-ski-resorts/i-52-24312_grandtarghee-wp1.jpg')
 }
