@@ -69,3 +69,6 @@ body {
 .survey-gradient {
     background: linear-gradient(to right, #ff9891, #E2E293, #96bf91);
 }
+.no-padding {
+    padding: 0px;
+}

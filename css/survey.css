@@ -1,0 +1,15 @@
+
+.resort-image {
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+#jackson {
+    background-image: url('http://cdn.jacksonholenet.com/images/content/18441_1633_Teton_Village_Jackson_Hole_WY_Tram_md.jpg')
+}
+
+#targhee {
+    background-image: url('http://cdn.jacksonholenet.com/images/content/14562_792_Grand_Targhee_md.jpg')
+}

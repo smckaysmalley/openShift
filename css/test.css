@@ -84,3 +84,6 @@ p {
 #slide-5 .bcg {
     background-image: url('../images/WP_20141230_10_58_21_Pro.jpg')
 }
+.relative {
+    position: relative;
+}

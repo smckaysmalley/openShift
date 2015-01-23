@@ -3,6 +3,7 @@
     if (isset($_COOKIE["ski_survey"]))
         header("Location: /php_survey/results");
 ?>
+<link href="/css/survey.css" type="text/css" rel="stylesheet">
 
 <div class="jumbotron center">
     <h3>Ski Resort Survey</h3>
@@ -10,6 +11,15 @@
     <p>Please take some time to rate the ski resorts below!</p>
 </div>
 <br/>
+
+<div class="section">
+    <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <div class="resort-image" id="targhee" data-50-top="right:0px" data-0-top="right:50%; opacit:0;"></div>
+    </div>
+    <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <div class="resort-image" id="jackson" data-50-top="left:0px" data-0-top="left:50%; opacit:0;"></div>
+    </div>
+</div>
 
 <form action="submit.php" method="POST" onsubmit="return verify();">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -21,7 +31,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="1">
                     </div>
@@ -37,7 +47,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="0" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
@@ -52,7 +62,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="1">
                     </div>
@@ -68,7 +78,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="1" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
@@ -83,7 +93,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="1">
                     </div>
@@ -99,7 +109,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="2" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
@@ -114,7 +124,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="1">
                     </div>
@@ -130,7 +140,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="3" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
@@ -145,7 +155,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="1">
                     </div>
@@ -161,7 +171,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="4" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
@@ -176,7 +186,7 @@
             </div>
             <div class="panel-body survey-gradient">
                 <div class="form-group center">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Bad</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Bad</div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="1">
                     </div>
@@ -192,7 +202,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <input type="radio" name="5" value="5">
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">Good</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding">Good</div>
                 </div>
             </div>
         </div>
