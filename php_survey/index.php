@@ -5,10 +5,11 @@
 ?>
 
 <div class="jumbotron center">
-    <h4>Ski Resort Survey</h4>
+    <h3>Ski Resort Survey</h3>
     <br/>
     <p>Please take some time to rate the ski resorts below!</p>
 </div>
+<br/>
 
 <form action="submit.php" method="POST" onsubmit="return verify();">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
