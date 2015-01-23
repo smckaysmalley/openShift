@@ -4,6 +4,12 @@
         header("Location: /php_survey/results");
 ?>
 
+<div class="jumbotron center">
+    <h4>Ski Resort Survey</h4>
+    <br/>
+    <p>Please take some time to rate the ski resorts below!</p>
+</div>
+
 <form action="submit.php" method="POST" onsubmit="return verify();">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="panel panel-default">
