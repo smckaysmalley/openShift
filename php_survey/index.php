@@ -14,10 +14,10 @@
 
 <div class="section">
     <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
-       <div class="resort-image" id="targhee" data-50-top="right:0px" data-0-top="right:50%; opacit:0;"></div>
+       <div class="resort-image" id="targhee" data-50-top="right:0px" data-0-top="right:50%; opacity:0;"></div>
     </div>
     <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
-       <div class="resort-image" id="jackson" data-50-top="left:0px" data-0-top="left:50%; opacit:0;"></div>
+       <div class="resort-image" id="jackson" data-50-top="left:0px" data-0-top="left:50%; opacity:0;"></div>
     </div>
 </div>
 
