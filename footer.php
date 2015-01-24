@@ -21,9 +21,13 @@
 
 <!-- faster page loading -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/fly-in.min.js"></script>
 <script type="text/javascript" src="http://mckaysmalley.com/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/general.js"></script>
 <script type="text/javascript" src="/js/skrollr.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
 
 </body>
 

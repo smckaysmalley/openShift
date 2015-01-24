@@ -12,17 +12,10 @@
 </div>
 <br/>
 
-<div class="section">
-    <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
-       <div class="resort-image" id="targhee" data-50-top="right:0px" data-0-top="right:50%; opacity:0;" data-anchor-target=".section"></div>
-    </div>
-    <div class="resort col-lg-6 col-md-6 col-sm-12 col-xs-12">
-       <div class="resort-image" id="jackson" data-50-top="left:0px" data-0-top="left:50%; opacity:0;" data-anchor-target=".section"></div>
-    </div>
-</div>
-
 <form action="submit.php" method="POST" onsubmit="return verify();">
+   
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <img class="resort-image fly-in-left" src="http://cdn.jacksonholenet.com/images/content/14562_792_Grand_Targhee_md.jpg">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title center">
@@ -54,7 +47,8 @@
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
+       <img class="resort-image fly-in-right" src="http://cdn.jacksonholenet.com/images/content/18441_1633_Teton_Village_Jackson_Hole_WY_Tram_md.jpg">
+        <div class="panel panel-default" >
             <div class="panel-heading">
                 <div class="panel-title center">
                     Jackson Hole
@@ -85,6 +79,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <img class="resort-image fly-in-right" src="http://www.skikelly.com/uploads/1-17-15%209.jpg">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title center">
@@ -116,6 +111,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <img class="resort-image fly-in-left" src="http://cdn.allparkcity.com/images/content/5020_14553_Park_City_Ski_Resort_md.jpg">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title center">
@@ -147,6 +143,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <img class="resort-image fly-in-left" src="http://skiresortadvisor.com/uploads/resort-tremblant-v08160614.jpg">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title center">
@@ -178,6 +175,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <img class="resort-image fly-in-right" src="http://cdn.allvail.com/images/content/6358_6525_Vail_Resort_md.jpg">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title center">

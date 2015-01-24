@@ -3,14 +3,6 @@
     overflow: hidden;
     height: 300px;
     width: 100%;
-    position: relative;
-    background-position: top left;
-}
-
-#jackson {
-    background-image: url('http://cdn.jacksonholenet.com/images/content/18441_1633_Teton_Village_Jackson_Hole_WY_Tram_md.jpg')
-}
-
-#targhee {
-    background-image: url('http://www.100besteverything.com/best-ski-resorts/i-52-24312_grandtarghee-wp1.jpg')
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
