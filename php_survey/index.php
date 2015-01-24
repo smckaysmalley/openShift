@@ -28,7 +28,7 @@
 <?php if (!isset($_COOKIE['vail'])) include('vail.php'); ;?>
 
     <div class="form-group center">
-        <input type="submit" class="btn btn-default" value="Submit">
+        <input type="submit" class="btn btn-primary" value="Submit">
         <a href="results/" class="btn btn-default">See Results</a>
     </div>
 </form>
