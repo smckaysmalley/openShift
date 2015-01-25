@@ -1,6 +1,6 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php');?>
 <?php
-    if (isset($_COOKIE["ski_survey"]))
+    if($_COOKIE['survey_completion'] == "6")
         header("Location: /php_survey/results");
 ?>
 <link href="/css/survey.css" type="text/css" rel="stylesheet">
@@ -15,17 +15,24 @@
 
 <form action="submit.php" method="POST">
    
-<?php if (!isset($_COOKIE['targhee'])) include('targhee.php'); ;?>
+<?php 
+    if (isset($_COOKIE['resorts']))
+        $taken = $_COOKIE['resorts'];
+    else
+        $taken = '';
 
-<?php if (!isset($_COOKIE['jackson'])) include('jackson.php'); ;?>
-    
-<?php if (!isset($_COOKIE['kelly'])) include('kelly.php'); ;?>
+    if (!strstr($taken, 'targhee')) include('targhee.php');
 
-<?php if (!isset($_COOKIE['park_city'])) include('park_city.php'); ;?>
+    if (!strstr($taken, 'jackson')) include('jackson.php');
 
-<?php if (!isset($_COOKIE['deer_valley'])) include('deer_valley.php'); ;?>
-    
-<?php if (!isset($_COOKIE['vail'])) include('vail.php'); ;?>
+    if (!strstr($taken, 'kelly')) include('kelly.php');
+
+    if (!strstr($taken, 'park_city')) include('park_city.php');
+
+    if (!strstr($taken, 'deer_valley')) include('deer_valley.php');
+
+    if (!strstr($taken, 'vail')) include('vail.php');
+?>
 
     <div class="form-group center">
         <input type="submit" class="btn btn-primary" value="Submit">
