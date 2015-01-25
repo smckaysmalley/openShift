@@ -9,7 +9,7 @@
     <h2>Ski Resort Survey</h2>
     <br/>
     <p>Please take some time to rate the ski resorts below!</p>
-    <p class="small">Rake which ever you like. You can submit them in parts!</p>
+    <p class="small">Vote on which ever you like. You can submit them in parts!</p>
 </div>
 <br/>
 
