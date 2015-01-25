@@ -17,6 +17,10 @@
         else
             setcookie('survey_completion', $count, time() + 86400);
         
+        if (count($records) <= 1)
+            for($i = 0; $i < 6; $i++)
+                $records[$i] = '0->0';
+            
         for($i = 0; $i < count($records); ++$i)
         {
             if ($i > 0)
