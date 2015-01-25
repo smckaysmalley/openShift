@@ -76,7 +76,7 @@
         </div>
         <div class="panel-body">
             <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-wiwidth: 2em; width:<?php echo floor($pc[0] / 5 * 100).'%'; ?>">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:<?php echo floor($pc[0] / 5 * 100).'%'; ?>">
                     <?php echo number_format($pc[0], 2); ?>
                 </div>
             </div>
