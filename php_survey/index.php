@@ -1,7 +1,8 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php');?>
 <?php
-    if($_COOKIE['survey_completion'] == "6")
-        header("Location: /php_survey/results");
+    if(isset($_COOKIE['survey_completion']))
+        if ($_COOKIE['survey_completion'] == "6")
+            header("Location: /php_survey/results");
 ?>
 <link href="/css/survey.css" type="text/css" rel="stylesheet">
 
@@ -13,7 +14,7 @@
 </div>
 <br/>
 
-<form action="submit.php" method="POST">
+<form action="submit.php" method="POST" onsubmit="return verify();">
    
 <?php 
     if (isset($_COOKIE['resorts']))
