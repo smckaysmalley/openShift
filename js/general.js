@@ -55,12 +55,14 @@ $(document).keydown(function (keystroke) {
             startFlip($('.panel'));
             startFlip($('body'));
             startFlip($('p'));
+            startFlip($('div'));
             string = "";
             break;
 
         case ('807367'):
             startFlip($('iframe'));
             startFlip($('img'));
+            startFlip($('.slider'));
             string = "";
             break;
 

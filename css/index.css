@@ -1,10 +1,57 @@
 .slider {
-    background-size: cover;
-/*    background-attachment: fixed;*/
     background-repeat:no-repeat;
-    height: 300px;
+    height: 400px;
+    overflow: hidden;
 }
 
 #section1 .slider {
+    background-image: url('/images/WP_20141229_21_13_26_Pro.jpg');
+}
+
+#section2 .slider {
+    background-image: url('/images/WP_20141230_10_58_21_Pro.jpg');
+}
+
+#section3 .slider {
     background-image: url('/images/WP_20140607_12_45_22_Pro.jpg');
+}
+
+#section4 .slider {
+    background-image: url('/images/WP_20141230_10_58_21_Pro.jpg');
+}
+.content {
+    padding: 60px;
+    background-color: #F5F5F5;
+}
+
+.content div.text {
+    font-family: Helvetica;
+    font-size: 14pt;
+    text-align: center;
+    opacity: 1;
+}
+
+.info-box .box-title {
+    padding: 10px 50px 0px 20px;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 14pt;
+}
+
+.content div.text {
+    padding: 20px 100px;
+}
+
+.info-box {
+    width: 300px;
+    height: 400px;
+    background-color: #F5F5F5;
+    font-size: 12pt;
+    position: relative;
+    opacity: 0.8;
+}
+
+
+.info-box .box-content {
+    padding: 100px 50px 20px 20px;
 }
