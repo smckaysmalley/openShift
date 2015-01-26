@@ -32,7 +32,7 @@
 }
 
 .info-box .box-title {
-    padding: 10px 50px 0px 20px;
+    padding: 4% 20% 0% 8%;
     text-align: center;
     font-family: Helvetica;
     font-size: 14pt;
@@ -43,8 +43,8 @@
 }
 
 .info-box {
-    width: 300px;
-    height: 400px;
+    width: 25%;
+    height: 100%;
     background-color: #F5F5F5;
     font-size: 12pt;
     position: relative;
@@ -53,5 +53,6 @@
 
 
 .info-box .box-content {
-    padding: 100px 50px 20px 20px;
+    padding: 30% 20% 5% 5%;
+    text-align: left;
 }
