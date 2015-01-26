@@ -1,4 +1,6 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
 <div class="panel-group center" id="expand-buttons" role="tab-list" aria-multiselectable="true">
     <a class="btn btn-primary" data-toggle="collapse" href="#aboutme" aria-expanded="false" aria-controls="aboutme">About Me</a>
     <a class="btn btn-primary" data-toggle="collapse" href="#hobbies" aria-expanded="false" aria-controls="hobbies">My Hobbies</a>

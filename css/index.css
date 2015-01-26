@@ -1,0 +1,10 @@
+.slider {
+    background-size: cover;
+/*    background-attachment: fixed;*/
+    background-repeat:no-repeat;
+    height: 300px;
+}
+
+#section1 .slider {
+    background-image: url('/images/WP_20140607_12_45_22_Pro.jpg');
+}
