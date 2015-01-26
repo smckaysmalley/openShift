@@ -48,7 +48,7 @@
 </div>
 
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <img class="resort-image fly-in-right" src="http://img1.findthebest.com/sites/default/files/1/media/images/Kelly_Canyon_Ski_Resort_480328_i0.jpg">
+    <img class="resort-image fly-in-right" src="http://www.skikelly.com/uploads/1-17-15%209.jpg">
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title center">
