@@ -51,5 +51,23 @@
         I served my mission in Colorado Springs, Colorado. I loved my mission.
     </div>
 </section>
+<br/>
+<div class="center">
+   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+       <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">
+                An Activity!
+            </div>
+        </div>
+        <div class="panel-body">
+            Somewhere on this page there are several easter eggs. Don't believe me? Just type 'flip'. If it doesn't work, hit the '0' (zero) key and try again.
+        </div>
+    </div>
+   </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <img class="bouncer small-img" src="http://2.bp.blogspot.com/-82WJ-enhWkE/UUpppYbNmNI/AAAAAAAAHFs/T0lIHPC-Nwg/s1600/question+mark.png">
+    </div>
+</div>
 
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
