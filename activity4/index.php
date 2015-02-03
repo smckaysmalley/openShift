@@ -1,10 +1,11 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
 <?php
+    include( $_SERVER['DOCUMENT_ROOT'] . '/setDBvariables.php');
     $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
     $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
     $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
     $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-    $db = new PDO('mysql:host=$dbHost;dbname=faith;charset=latin1', $dbUser, $dbPAssword, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=faith;charset=latin1', $dbUser, $dbPassword, array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     if (isset($_GET['search']))
     {
