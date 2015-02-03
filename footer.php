@@ -1,6 +1,6 @@
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#grumpy-modal" id="grumpy">
+    <button type="button" class="btn btn-primary btn-lg fly-in-left" data-toggle="modal" data-target="#grumpy-modal" id="grumpy">
         SSSHHHHH!!!!
     </button>
 
