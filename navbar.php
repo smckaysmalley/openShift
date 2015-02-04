@@ -30,9 +30,38 @@
                         </li>
                         <li><a href="/activity2">Cookies</a>
                         </li>
+                        <li><a href="/activity4">Scripture DB</a>
+                        </li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="projects" rol="button" aria-expanded="false">Projects<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/valient_11">Valient 11</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+		        <?php 
+			        if (isset($_SESSION["firstname"]))
+			        {
+			        	echo "<li role='presentation' class='dropdown'>
+							     <a class='dropdown-toggle' data-toggle='dropdown' href='#classes' role='button' aria-expanded='false'>" . $_SESSION["firstname"] . "<b class='caret'></b></a>
+							<ul class='dropdown-menu' role='menu'>
+								<li><a href='#'>My Account</a></li>";
+								if(isset($_SESSION["admin"]) || isset($_SESSION["student"]))
+									echo "<li><a href='/valient_11'>Valient 11</a></li>";
+							echo "<li><a href='/logout.php'>Logout</a></li>
+							</ul>
+						</li>";
+			        }
+			        else
+			        {
+			        	echo "<li><a href='/login'>Login</a></li>";
+					}
+		        ?>
+		      </ul>
         </div>
     </div>
 </nav>
