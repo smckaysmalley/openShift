@@ -29,6 +29,7 @@ if ($email && $password)
 			$_SESSION["lastname"]  = $row['lastname'];
 			$_SESSION["email"]     = $row['email'];
 			$_SESSION["admin"]     = $row['admin'];
+            $_SESSION["teacher"]   = $row['teacher'];
 			$_SESSION["student"]   = $row['student'];
 			unset($_SESSION["temp_email"]);
 			unset($_SESSION["temp_password"]);

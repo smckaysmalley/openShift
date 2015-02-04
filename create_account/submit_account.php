@@ -42,9 +42,12 @@
 		{
 			$_SESSION["id"] = mysqli_fetch_row(mysqli_query($conn, "SELECT ID FROM user WHERE FIRST_NAME = " . $firstname . " AND LAST_NAME = " . $lastname . "AND EMAIL = " . $email))[0];
 			$_SESSION["firstname"] = $firstname;
-			$_SESSION["lastname"] = $lastname;
-			$_SESSION["email"] = $email;
-			$_SESSION["message"] = "Account created!";
+			$_SESSION["lastname"]  = $lastname;
+			$_SESSION["email"]     = $email;
+            $_SESSION["student"]   = $student;
+            $_SESSION["admin"]     = 0;
+            $_SESSION["teacher"]   = 0;
+			$_SESSION["message"]   = "Welcome aboard $firstname!";
 
 			unset($_SESSION["temp_firstname"]);
 			unset($_SESSION["temp_lastname"]);

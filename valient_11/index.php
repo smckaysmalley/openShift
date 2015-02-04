@@ -1,6 +1,8 @@
 <?php require( $_SERVER['DOCUMENT_ROOT'] . '/header.php'); ?>
 <?php
-	if ($_SESSION["admin"])
+if (isset($_SESSION['admin']) || isset($_SSESSION['teacher']))
+{
+	if ($_SESSION["admin"] || $_SESSION["teacher"])
 	{
 		echo "<div class='container center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button></div><br/>";
 		echo "
@@ -64,6 +66,7 @@
 			  </div>
 			</div>";
 	}
+}
 
 function getContent()
 {
