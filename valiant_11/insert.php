@@ -7,7 +7,7 @@ session_start();
     $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
 // Create connection
-$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valient_11');
+$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
 if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
 
 if ($_POST["type"] == "youtube")
@@ -23,12 +23,12 @@ else if ($_POST["type"] == "picture")
 else if ($_POST["type"] == "text")
 	$content = $_POST["content"];
 
-$sql = "INSERT INTO material (title, type, content, created_by, creation_date) VALUES(\"" . $_POST["title"] . "\", '" . $_POST["type"] . "', '" . $content . "', " . $_SESSION["user_id"] . ", NOW())";
+$sql = "INSERT INTO material (title, type, content, created_by, creation_date) VALUES('" . $_POST["title"] . "', '" . $_POST["type"] . "', '" . $content . "', " . $_SESSION["user_id"] . ", NOW())";
 
 mysqli_query($conn, $sql)
 or die(mysqli_error($conn));
 
 $conn->close();
 $_SESSION["message"] = "Successfully added content";
-header("Location: /valient_11");
+header("Location: /valiant_11");
 ?>

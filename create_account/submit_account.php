@@ -24,7 +24,7 @@
     $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
 	// Create connection
-	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valient_11');
+	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
 	if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
 
 	if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user WHERE EMAIL = '" . $email . "'")) != 0)

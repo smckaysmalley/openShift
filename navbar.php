@@ -37,7 +37,7 @@
                 <li role="presentation" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="projects" rol="button" aria-expanded="false">Projects<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/valient_11">Valient 11</a>
+                        <li><a href="/valiant_11">Valiant 11</a>
                         </li>
                     </ul>
                 </li>
@@ -51,7 +51,7 @@
 							<ul class='dropdown-menu' role='menu'>
 								<li><a href='#'>My Account</a></li>";
 								if($_SESSION["admin"] || $_SESSION["student"] || $_SESSION["teacher"])
-									echo "<li><a href='/valient_11'>Valient 11</a></li>";
+									echo "<li><a href='/valiant_11'>Valiant 11</a></li>";
 							echo "<li><a href='/logout.php'>Logout</a></li>
 							</ul>
 						</li>";

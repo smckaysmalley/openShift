@@ -19,7 +19,7 @@ if (isset($_SESSION['admin']) || isset($_SSESSION['teacher']))
 			        </h4>
 			      </div>
 			      <div class='modal-body'>
-			        <form method='post' action='/valient_11/insert.php'>
+			        <form method='post' action='/valiant_11/insert.php'>
 			          <div class='form-group'>
 			            <label for='inputTitle' class='col-sm-2 control-label'>
 			              Title
@@ -76,7 +76,7 @@ function getContent()
     $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
 	// Create connection
-	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valient_11');
+	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
 	if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
 
 	$sql ="SELECT title, content FROM material ORDER BY creation_date DESC LIMIT 10";
