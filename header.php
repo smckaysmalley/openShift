@@ -12,25 +12,26 @@
 </head>
 
 <body>
+    <div class="container">
+    <?php
+        include('navbar.php');
+        if (isset($_SESSION["error"]))
+        {
+            echo 
+                "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
+                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                  <strong>ERROR: </strong>" . $_SESSION["error"] . "
+                </div>";
+            unset($_SESSION["error"]);
+        }
+        if (isset($_SESSION["message"]))
+        {
+            echo 
+                "<div class=\"alert alert-success alert-dismissible\" role=\"alert\">
+                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                  " . $_SESSION["message"] . "
+                </div>";
+            unset($_SESSION["message"]);
+        }
+    ?>    
     <main class="container">
-        <?php
-            include('navbar.php');
-            if (isset($_SESSION["error"]))
-            {
-                echo 
-                    "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
-                      <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
-                      <strong>ERROR: </strong>" . $_SESSION["error"] . "
-                    </div>";
-                unset($_SESSION["error"]);
-            }
-            if (isset($_SESSION["message"]))
-            {
-                echo 
-                    "<div class=\"alert alert-success alert-dismissible\" role=\"alert\">
-                      <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
-                      " . $_SESSION["message"] . "
-                    </div>";
-                unset($_SESSION["message"]);
-            }
-        ?>
