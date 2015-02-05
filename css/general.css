@@ -34,13 +34,20 @@ textarea.comment {
 .not-yet {
     width: 20px;
     opacity: 0.6;
+    transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -webkit-transition: transform 0.3s ease-out;
 }
 
 .not-yet:hover {
     opacity: 1;
-    box-shadow: 0px 0px 20px #940807;
-    border-radius: 100%;
-    border-style: inset;
+    transform: scale(1.5) rotate(10deg);
+    -o-transform: scale(1.5) rotate(10deg);
+    -ms-transform: scale(1.5) rotate(10deg);
+    -moz-transform: scale(1.5) rotate(10deg);
+    -webkit-transform: scale(1.5) rotate(10deg);   
 }
 
 .enjoyed {
