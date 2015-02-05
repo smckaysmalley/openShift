@@ -34,4 +34,4 @@
             unset($_SESSION["message"]);
         }
     ?>    
-    <main class="container">
+    <div id="main">

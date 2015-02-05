@@ -42,7 +42,7 @@ $(document).ready(function()
         throw new Error("Fly-in JavaScript requires jQuery");
     else {
         flewIn = false;
-        flyDistance = -($('main').width());
+        flyDistance = -($('#main').width());
         var flyerRight = document.getElementsByClassName('fly-in-right');
         var flyerLeft = document.getElementsByClassName('fly-in-left');
 
@@ -65,7 +65,7 @@ $(document).ready(function()
         }
 
         //sets the overflow for offscreen elements
-        $('main').css('overflow', 'hidden');
+        $('#main').css('overflow', 'hidden');
     }
 });
 

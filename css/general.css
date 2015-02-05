@@ -1,3 +1,53 @@
+textarea.comment {
+    resize:none;
+    width:100%;
+    margin-top: 4px;
+}
+
+.comment-box {
+    text-align: left;
+    border: 1px solid #D4D4D4;
+    margin-top: 4px;
+    padding: 3px 9px;
+    font-family: Helvetica;
+    font-size: 12pt;
+}
+
+.content {
+    font-family: Helvetica;
+    font-size: 13pt;
+    
+}
+
+.enjoy {
+     text-align: right;
+}
+
+.enjoy-count {
+    
+}
+
+.panel-left {
+    float: left;
+}    
+
+.not-yet {
+    width: 20px;
+    opacity: 0.6;
+}
+
+.not-yet:hover {
+    opacity: 1;
+    box-shadow: 0px 0px 20px #940807;
+    border-radius: 100%;
+    border-style: inset;
+}
+
+.enjoyed {
+    opacity: 1;
+    width: 20px;
+}
+
 h1 {
     font-family: Helvetica;
 }

@@ -21,7 +21,7 @@ else if ($_POST["type"] == "picture")
 	$content ="<img src=\"" . $_POST["content"] . "\" width=\"100%\" title=\"" . $_POST["title"] . "\" alt=\"" . $_POST["title"] . "\">";
 }
 else if ($_POST["type"] == "text")
-	$content = $_POST["content"];
+	$content = "<p class='content'>" .$_POST["content"] . "</p>";
 
 $sql = "INSERT INTO material (title, type, content, created_by, creation_date) VALUES('" . $_POST["title"] . "', '" . $_POST["type"] . "', '" . $content . "', " . $_SESSION["user_id"] . ", NOW())";
 

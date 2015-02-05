@@ -1,10 +1,10 @@
 <?php require( $_SERVER['DOCUMENT_ROOT'] . '/header.php'); ?>
 <?php
-if (isset($_SESSION['admin']) || isset($_SSESSION['teacher']))
+if (isset($_SESSION['admin']) || isset($_SESSION['teacher']))
 {
 	if ($_SESSION["admin"] || $_SESSION["teacher"])
 	{
-		echo "<div class='container center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button></div><br/>";
+		echo "<div class='center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button></div><br/>";
 		echo "
 			<!-- Modal -->
 			<div class='modal fade' id='addModal' role='dialog'>
@@ -68,58 +68,81 @@ if (isset($_SESSION['admin']) || isset($_SSESSION['teacher']))
 	}
 }
 
-function getContent()
+$class_member = false;
+if (isset($_SESSION['admin']))
 {
-    include( $_SERVER['DOCUMENT_ROOT'] . "/localsetup.php");
-    $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-    $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-    $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-
-	// Create connection
-	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
-	if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
-
-	$sql ="SELECT title, content FROM material ORDER BY creation_date DESC LIMIT 10";
-	$result = mysqli_query($conn, $sql);
-
-	$content = "<div class='container'>";
-	while ($row = mysqli_fetch_assoc($result)) 
-	{
-		$content .= "
-		<div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
-			<div class='panel panel-primary'>
-				<div class='panel-heading'>
-					<div class='panel-title'>
-					" .	$row['title'] . "
-					</div>
-				</div>
-				<div class='panel-body center'>
-				" .	$row['content'] . "
-				</div>
-			</div>
-		</div>";
-	}
-	$content .= "</div>";
-
-	$conn->close();
-	return $content;
+    if ($_SESSION['admin'] == 1 || $_SESSION['teacher'] == 1 || $_SESSION['student'] == 1)
+        $class_member = true;
 }
 
-	echo getContent();
+include( $_SERVER['DOCUMENT_ROOT'] . "/localsetup.php");
+$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
+$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+
+// Create connection
+$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
+if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
+
+$sql = "SELECT id, title, content FROM material ORDER BY creation_date DESC LIMIT 10";
+$result = mysqli_query($conn, $sql);
+
+echo "<div>";
+while ($row = mysqli_fetch_assoc($result)) 
+{
+    $enjoy = "SELECT count(*) as 'count' FROM enjoy WHERE parent = " . $row['id'];
+    $enjoy_count = mysqli_fetch_assoc(mysqli_query($conn, $enjoy));
+
+    echo "
+    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+        <div class='panel panel-primary'>
+            <div class='panel-heading'>
+                <div class='panel-title panel-left'>
+                " .	$row['title'] . "
+                </div>
+                <div class='enjoy'>
+                    <span class='enjoy-count'>";
+                
+                if ($enjoy_count['count'] > 0)
+                    echo $enjoy_count['count'];
+                    
+                echo "</span>
+                    <img class='not-yet' src='/images/enjoy.png'"; 
+    
+                if ($class_member)
+                    echo "onclick='enjoy(this, " . $row['id'] . ", " . $_SESSION['user_id'] . ");'";
+                    
+                    echo "/>";
+                    
+        echo "</div>
+            </div>
+            <div class='panel-body center'>
+            " .	$row['content'];
+
+    //get comments and insert them, but only if user is a student, teacher, or admin!
+    if ($class_member)
+    {
+        $comment_query = "SELECT content FROM comment WHERE parent = " . $row['id'];
+        $comments = mysqli_query($conn, $comment_query);
+
+        while ($comment = mysqli_fetch_assoc($comments))
+            echo "<div class='comment-box'>" . $comment['content'] . "</div>";
+
+        echo "<form method='post' action='comment.php'>
+                        <input type='hidden' name='parent' value='" . $row['id'] . "'/>
+                        <textarea class='comment' rows='2' name='comment' placeholder='Have a comment?'></textarea>
+                        <button class='btn btn-sm btn-default' type='submit'>Submit</button>
+                    </form>";
+    }
+
+    echo "</div></div></div>";
+}
+echo "</div>";
+
+$conn->close();
+
 ?>
 
-<script type="text/javascript">
-    
-    function updatecontentlabel()
-    {
-        var type = $('#inputType').val();
-
-        if (type == 'youtube' || type == 'picture')
-            $('#content').html("URL");
-        else if (type == 'text')
-            $('#content').html("Content");
-    }
-    
-</script>
+<script type="text/javascript" src="/js/valiant_11.js"></script>
 
 <?php require( $_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
