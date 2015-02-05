@@ -41,10 +41,11 @@
     }
     echo "</tbody></table>";
     echo "</div></div>";
+
+    echo "<form action='index.php' type='GET'>";
+
+    echo "<input type='text' name='search' placeholder='book'>";
+
+    echo "</form>"
 ?>
-   
-
-<input type='text' name='search' placeholder='book' onchange="lookup(this);">
-
-<script type="text/javascript" src="/js/activity4.js"></script>
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
