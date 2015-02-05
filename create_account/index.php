@@ -46,7 +46,7 @@
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label for="student" class="col-sm-2 control-label">Are you in my Valient 11 class?</label>
+		    <label for="student" class="col-sm-2 control-label">Are you in my Valiant 11 class?</label>
 		    <div class="col-sm-10">
 		      <input type="checkbox" id="student" name="student">
 		    </div>
