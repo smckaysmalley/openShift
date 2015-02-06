@@ -15,7 +15,7 @@ else if ($_POST["type"] == "picture")
 else if ($_POST["type"] == "text")
 	$content = "<p class='content'>" .$_POST["content"] . "</p>";
 
-$material_query = $valiant_db->prepare("INSERT INTO material (title, type, content, created_by, creation_date) VALUES(:title, :type, :content, :user_id, NOW())");
+$material_query = $valiant_db->prepare("INSERT INTO material (title, type, content, created_by, display, creation_date) VALUES(:title, :type, :content, :user_id, 1, NOW())");
 $material_query->execute(array(':title' => $_POST['title'], ':type' => $_POST['type'], ':content' => $content, ':user_id' => $_SESSION['user_id']));
 
 //close the database

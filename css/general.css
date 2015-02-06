@@ -1,3 +1,11 @@
+.glass {
+    opacity: 0.8;
+}
+
+.glass:hover {
+    opacity: 1;
+}
+
 textarea.comment {
     resize:none;
     width:100%;

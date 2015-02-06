@@ -4,7 +4,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['teacher']))
 {
 	if ($_SESSION["admin"] || $_SESSION["teacher"])
 	{
-		echo "<div class='center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button></div><br/>";
+		echo "<div class='center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button>";
+        echo "<a class='btn btn-primary' href='/valiant_11/archive.php'>Archive Content</a></div><br/>";
 		echo "
 			<!-- Modal -->
 			<div class='modal fade' id='addModal' role='dialog'>
@@ -77,7 +78,7 @@ if (isset($_SESSION['admin']))
 
 require("connect_to_db.php");
 
-$material_query = "SELECT id, title, content FROM material ORDER BY creation_date DESC LIMIT 10";
+$material_query = "SELECT id, title, content FROM material WHERE display = 1 ORDER BY creation_date DESC LIMIT 10";
 $material_result = $valiant_db->query($material_query);
 
 echo "<div>";
