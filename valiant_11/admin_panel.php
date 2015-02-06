@@ -1,11 +1,3 @@
-<div class="well well-sm" id="admin_panel">
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active"><a href="/valiant_11/">Valient 11 Class Page</a></li>
-        <li role="presentation"><a data-target='#addModal' data-toggle='modal'>Add Content</a></li>
-        <li role="presentation"><a href="/valiant_11/archive.php">Archive Content</a></li>
-    </ul>
-</div>
-
 <!-- Modal -->
 <div class='modal fade' id='addModal' role='dialog'>
     <div class='modal-dialog'>
@@ -67,9 +59,34 @@
 </div>
 
 <style>
+
+.solid-bgnd {
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+@media screen and (min-width: 1566px) {
     #admin_panel {
         position: fixed;
         top: 100px;
         left: 15px;
+        width: auto;
     }
+    
+@media screen and (max-width: 1565px) {
+    #admin_panel {
+        position: static;
+        width: 100%;
+    }
+
 </style>
+
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="admin_panel">
+    <ul class="nav nav-pills nav-stacked solid-bgnd">
+        <li role="presentation" class="active"><a href="/valiant_11/">Valient 11 Class Page</a></li>
+        <li role="presentation"><a data-target='#addModal' data-toggle='modal'>Add Content</a></li>
+        <li role="presentation"><a href="/valiant_11/archive.php">Archive Content</a></li>
+    </ul>
+</div>

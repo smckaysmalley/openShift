@@ -20,7 +20,6 @@ require("connect_to_db.php");
 $material_query = "SELECT id, title, content FROM material WHERE display = 1 ORDER BY creation_date DESC LIMIT 10";
 $material_result = $valiant_db->query($material_query);
 
-echo "<div>";
 while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
 {
     $enjoy_query = "SELECT count(*) as 'count' FROM enjoy WHERE parent = " . $material_row['id'];
@@ -87,7 +86,6 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
 
     echo "</div></div></div>";
 }
-echo "</div>";
 
 $valiant_db = null;
 
