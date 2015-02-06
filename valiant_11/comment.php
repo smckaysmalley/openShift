@@ -7,14 +7,16 @@ if (isset($_POST))
     
     $comment = $_SESSION['firstname'] . ': ' . $_POST['comment'];
     
-    $insert_query = $valiant_db->prepare("INSERT INTO comment (content, parent, creation_date) VALUES (:comment, :parent, NOW())");
-    $insert_query->execute(array(':comment' => $comment, ':parent' => $_POST['parent']));
+    $insert_query = $valiant_db->prepare("INSERT INTO comment (content, parent, commented_by, creation_date) VALUES (:comment, :parent, :user, NOW())");
+    $insert_query->execute(array(':comment' => $comment, ':parent' => $_POST['parent'], ':user' => $_POST['user']));
+    
+    echo "<div class='comment-box'>" . $comment . "</div>";
     
     //close the connection
     $valiant_db = null;
-    header("Location: /valiant_11");
+//    header("Location: /valiant_11");
 }
 else
-    header("Location: /valiant_11");
+//    header("Location: /valiant_11");
 
 ?>

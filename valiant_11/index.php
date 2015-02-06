@@ -74,14 +74,14 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
         $comment_query = "SELECT content FROM comment WHERE parent = " . $material_row['id'];
         $comment_result = $valiant_db->query($comment_query);
 
+        echo "<div class='comments'>";
         while ($comment_row = $comment_result->fetch(PDO::FETCH_ASSOC))
             echo "<div class='comment-box'>" . $comment_row['content'] . "</div>";
+        echo "</div>";
 
-        echo "<form method='post' action='comment.php'>
-                        <input type='hidden' name='parent' value='" . $material_row['id'] . "'/>
-                        <textarea class='comment' rows='2' name='comment' placeholder='Have a comment?'></textarea>
-                        <button class='btn btn-sm btn-default' type='submit'>Submit</button>
-                    </form>";
+        echo "
+                <textarea class='comment' rows='2' name='comment' placeholder='Have a comment?'></textarea>
+                <button class='btn btn-sm btn-default' onclick='comment(this, " . $material_row['id'] . ", " . $_SESSION['user_id'] . ");'>Comment</button>";
     }
 
     echo "</div></div></div>";

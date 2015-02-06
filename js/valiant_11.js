@@ -25,10 +25,25 @@ function archive(element, item) {
         if (display == '1') {
             $(panel).removeClass('archived');
             $(element).removeClass('label-danger').addClass('label-success').html('Active');
-        } 
-        else {
+        } else {
             $(panel).addClass('archived');
             $(element).removeClass('label-success').addClass('label-danger').html('Archived');
         }
     });
+}
+
+function comment(element, prnt, usr) {
+    var comment_box = $(element).siblings('textarea[name="comment"]');
+    var comment = $(comment_box).val();
+    $(comment_box).val("");
+    $.post('/valiant_11/comment.php', {
+        parent: prnt,
+        user: usr,
+        comment: comment
+    }, function (response) {
+        console.log(response);
+                var commentbox = $(element).siblings('.comments');
+                $(commentbox).append(response);
+    });
+    return false;
 }

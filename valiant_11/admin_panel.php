@@ -64,6 +64,7 @@
     background-color: white;
     border-radius: 4px;
     padding: 5px;
+    margin-bottom: 15px;
 }
 
 @media screen and (min-width: 1566px) {
