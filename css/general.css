@@ -1,8 +1,20 @@
-.glass {
+.label {
+    cursor: pointer;
+}
+
+.label-success:hover {
     opacity: 0.8;
 }
 
-.glass:hover {
+.label-danger:hover {
+    opacity: 1;
+}
+
+.archived {
+    opacity: 0.6;
+}
+
+.archived:hover {
     opacity: 1;
 }
 

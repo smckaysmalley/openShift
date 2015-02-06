@@ -4,69 +4,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['teacher']))
 {
 	if ($_SESSION["admin"] || $_SESSION["teacher"])
 	{
-		echo "<div class='center'><button class='btn btn-primary' data-target='#addModal' data-toggle='modal'>Add Content</button>";
-        echo "<a class='btn btn-primary' href='/valiant_11/archive.php'>Archive Content</a></div><br/>";
-		echo "
-			<!-- Modal -->
-			<div class='modal fade' id='addModal' role='dialog'>
-			  <div class='modal-dialog'>
-			    <div class='modal-content'>
-			      <div class='modal-header'>
-			        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-			          &times;
-			        </button>
-			        <h4 class='modal-title' id='myModalLabel'>
-			          Add Content
-			        </h4>
-			      </div>
-			      <div class='modal-body'>
-			        <form method='post' action='/valiant_11/insert.php'>
-			          <div class='form-group'>
-			            <label for='inputTitle' class='col-sm-2 control-label'>
-			              Title
-			            </label>
-			            <div class='col-sm-10'>
-			              <input type='text' class='form-control' id='inputTitle' placeholder='Title' name='title'>
-			            </div>
-			          </div>
-			          <br/>
-			          <div class='form-group'>
-			            <label for='inputType' class='col-sm-2 control-label'>
-			              Type
-			            </label>
-			            <div class='col-sm-10'>
-			              <select class='form-control' id='inputType' name='type' onchange='updatecontentlabel();'>
-			                <option>
-			                </option>
-			                <option value='youtube'>
-			                  Youtube
-			                </option>
-			                <option value='text'>
-			                  Text
-			                </option>
-			                <option value='picture'>
-			                  Picture
-			                </option>
-			              </select>
-			            </div>
-			          </div>
-			          <br/>
-			          <div class='form-group'>
-			            <label for='inputContent' id='content' class='col-sm-2 control-label'>
-			            </label>
-			            <div class='col-sm-10'>
-			              <textarea class='form-control' id='inputContent' name='content'></textarea>
-			            </div>
-			          </div>
-			          <button type='submit' class='btn btn-primary'>
-			            Submit
-			          </button>
-			        </form>
-			      </div>
-			    </div>
-			  </div>
-			</div>";
-	}
+	   require($_SERVER['DOCUMENT_ROOT'] . "/valiant_11/admin_panel.php");	
+    }
 }
 
 $class_member = false;
@@ -96,7 +35,7 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
                 " .	$material_row['title'] . "
                 </div>
                 <div class='panel-right'>
-                    <span class='enjoy-count'>";
+                    <span class='enjoy-count badge'>";
                 
     if ($enjoy_count['count'] > 0)
         echo $enjoy_count['count'];
