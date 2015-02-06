@@ -14,6 +14,7 @@ function enjoy(element, prnt, usr) {
     }, function (count) {
         $(element).removeClass('no-enjoy').addClass('enjoy');
         $(element).siblings('.enjoy-count').html(count);
+        $(element).removeAttr('onclick');
     });
 }
 
