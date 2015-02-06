@@ -7,6 +7,7 @@
 	</div>
 	<div class="panel-body">
 		<form class="form-horizontal" role="form" method="post" action="/login/auth.php">
+          <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['HTTP_REFERER']; ?>">
 		  <div class="form-group">
 		    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-10">
@@ -30,10 +31,11 @@
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		      <button type="submit" class="btn btn-primary">Submit</button>
-		      <button type="submit" formaction="/create_account" formmethod="post" class="btn btn-default">Create Account</button>
+		      <button onsubmit="create()" formaction="/create_account" formmethod="post" class="btn btn-default">Create Account</button>
 		    </div>
 		  </div>
 		</form>
 	</div>
 </div>
+<script
 <?php require( $_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>

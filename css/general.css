@@ -19,19 +19,15 @@ textarea.comment {
     
 }
 
-.enjoy {
+.panel-right {
      text-align: right;
-}
-
-.enjoy-count {
-    
 }
 
 .panel-left {
     float: left;
 }    
 
-.not-yet {
+.no-enjoy {
     width: 20px;
     opacity: 0.6;
     transition: transform 0.3s ease-out;
@@ -41,7 +37,7 @@ textarea.comment {
     -webkit-transition: transform 0.3s ease-out;
 }
 
-.not-yet:hover {
+.no-enjoy:hover {
     opacity: 1;
     transform: scale(1.5) rotate(10deg);
     -o-transform: scale(1.5) rotate(10deg);
@@ -50,7 +46,7 @@ textarea.comment {
     -webkit-transform: scale(1.5) rotate(10deg);   
 }
 
-.enjoyed {
+.enjoy {
     opacity: 1;
     width: 20px;
 }

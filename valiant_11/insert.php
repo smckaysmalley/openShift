@@ -1,14 +1,6 @@
 <?php
 session_start();
-
-    include( $_SERVER['DOCUMENT_ROOT'] . "/localsetup.php");
-    $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-    $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-    $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-
-// Create connection
-$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
-if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
+require('connect_to_db.php');
 
 if ($_POST["type"] == "youtube")
 {
@@ -23,12 +15,11 @@ else if ($_POST["type"] == "picture")
 else if ($_POST["type"] == "text")
 	$content = "<p class='content'>" .$_POST["content"] . "</p>";
 
-$sql = "INSERT INTO material (title, type, content, created_by, creation_date) VALUES('" . $_POST["title"] . "', '" . $_POST["type"] . "', '" . $content . "', " . $_SESSION["user_id"] . ", NOW())";
+$material_query = $valiant_db->prepare("INSERT INTO material (title, type, content, created_by, creation_date) VALUES(:title, :type, :content, :user_id, NOW())");
+$material_query->execute(array(':title' => $_POST['title'], ':type' => $_POST['type'], ':content' => $content, ':user_id' => $_SESSION['user_id']));
 
-mysqli_query($conn, $sql)
-or die(mysqli_error($conn));
-
-$conn->close();
+//close the database
+$valiant_db = null;
 $_SESSION["message"] = "Successfully added content";
 header("Location: /valiant_11");
 ?>

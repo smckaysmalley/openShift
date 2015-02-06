@@ -11,7 +11,7 @@ function updatecontentlabel()
 function enjoy(element, prnt, usr)
 {
     $.post('/valiant_11/enjoy.php', { parent: prnt, user: usr }, function (count) {
-        $(element).removeClass('enjoy').addClass('enjoyed');
+        $(element).removeClass('no-enjoy').addClass('enjoy');
         $(element).siblings('.enjoy-count').html(count);
     });
 }

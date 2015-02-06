@@ -1,73 +1,66 @@
 <?php
-	session_start();
+session_start();
 
-	$firstname = $_POST["firstname"];
-	$lastname  = $_POST["lastname"];
-	$email     = $_POST["email"];
-	$password  = $_POST["password"];
-	$confirm   = $_POST["confirm"];
-	if ($_POST["student"])
-		$student = 1;
-	else
-		$student = 0;
+if ($_POST["student"])
+    $student = 1;
+else
+    $student = 0;
 
 
-	$_SESSION["temp_lastname"]  = $lastname;
-	$_SESSION["temp_firstname"] = $firstname;
-	$_SESSION["temp_email"]     = $email;
-	$_SESSION["temp_password"]  = $password;
+$_SESSION["temp_lastname"]  = $_POST["lastname"];
+$_SESSION["temp_firstname"] = $_POST["firstname"];
+$_SESSION["temp_email"]     = $_POST["email"];
+$_SESSION["temp_password"]  = $_POST["password"];
 
-    include( $_SERVER['DOCUMENT_ROOT'] . '/localsetup.php');
-    $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-    $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
-    $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-    $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+require($_SERVER['DOCUMENT_ROOT'] . "/valiant_11/connect_to_db.php");
 
-	// Create connection
-	$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
-	if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
+$email_query = $valiant_db->prepare("SELECT * FROM user WHERE email = :email");
+$email_query->execute(array(':email' => $_POST['email']));
 
-	if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user WHERE EMAIL = '" . $email . "'")) != 0)
-	{
-		unset($_SESSION["temp_password"]);
-		$_SESSION["error"] = "An account with that email already exists. Please Login.";
-		header("Location: /login");
-	}
-	else if($password == $confirm)
-	{
-		$sql = "INSERT INTO user (firstname, lastname, email, student, teacher, admin, password, creation_date)
-		VALUES ('".$firstname."', '".$lastname."', '".$email . "', " . $student. ", 0, 0, '" .$password."', NOW())";
+if ($email_query->rowCount() != 0) {
+    
+    unset($_SESSION["temp_password"]);
+    $_SESSION["error"] = "An account with that email already exists. Please Login.";
+    header("Location: /login");
+}
 
-		if(mysqli_query($conn, $sql))
-		{
-			$_SESSION["id"] = mysqli_fetch_row(mysqli_query($conn, "SELECT ID FROM user WHERE FIRST_NAME = " . $firstname . " AND LAST_NAME = " . $lastname . "AND EMAIL = " . $email))[0];
-			$_SESSION["firstname"] = $firstname;
-			$_SESSION["lastname"]  = $lastname;
-			$_SESSION["email"]     = $email;
-            $_SESSION["student"]   = $student;
-            $_SESSION["admin"]     = 0;
-            $_SESSION["teacher"]   = 0;
-			$_SESSION["message"]   = "Welcome aboard $firstname!";
+else if($_POST["password"] == $_POST["confirm"]) {
+    
+    try {
+        $create_query = $valiant_db->prepare("INSERT INTO user (firstname, lastname, email, student, teacher, admin, password, creation_date) VALUES (:firstname, :lastname, :email, :student, 0, 0, :password, NOW())");
+        $create_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email'], ':student' => $student, ':password' => $_POST['password']));
+        
+        $id_query = $valiant_db->prepare("SELECT id FROM user WHERE firstname = :firstname AND lastname = :lastname AND email = :email");
+        $id_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email']));
+        $id_row = $id_query->fetch(PDO::FETCH_ASSOC);
 
-			unset($_SESSION["temp_firstname"]);
-			unset($_SESSION["temp_lastname"]);
-			unset($_SESSION["temp_email"]);
-			unset($_SESSION["temp_password"]);
+        $_SESSION["id"]        = $id_row['id'];
+        $_SESSION["firstname"] = $_POST["firstname"];
+        $_SESSION["lastname"]  = $_POST["lastname"];
+        $_SESSION["email"]     = $_POST["email"];
+        $_SESSION["student"]   = $student;
+        $_SESSION["admin"]     = 0;
+        $_SESSION["teacher"]   = 0;
+        $_SESSION["message"]   = "Welcome aboard " . $_POST["firstname"] . "!";
 
-			header('Location: /');
-		}
-		else
-		{
-			$_SESSION["error"] = "Could not create account. Try again." . mysqli_error($conn);
-			header("Location: /create_account");
-		}
-	}	
-	else
-	{
-		unset($_SESSION["temp_password"]);
-		$_SESSION["error"] = "Try again: passwords do not match";
-		header("Location: /create_account");
-	}
+        unset($_SESSION["temp_firstname"]);
+        unset($_SESSION["temp_lastname"]);
+        unset($_SESSION["temp_email"]);
+        unset($_SESSION["temp_password"]);
+
+        header('Location: /');
+    }
+    
+    catch (Exception $e) {
+        $_SESSION["error"] = "Could not create account. Try again." . $e->getMessage();
+        header("Location: /create_account");
+    }
+}	
+else {
+    unset($_SESSION["temp_password"]);
+    $_SESSION["error"] = "Try again: passwords do not match";
+    header("Location: /create_account");
+}
 ?>
 
 

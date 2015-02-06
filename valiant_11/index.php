@@ -75,61 +75,71 @@ if (isset($_SESSION['admin']))
         $class_member = true;
 }
 
-include( $_SERVER['DOCUMENT_ROOT'] . "/localsetup.php");
-$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+require("connect_to_db.php");
 
-// Create connection
-$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, 'valiant_11');
-if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
-
-$sql = "SELECT id, title, content FROM material ORDER BY creation_date DESC LIMIT 10";
-$result = mysqli_query($conn, $sql);
+$material_query = "SELECT id, title, content FROM material ORDER BY creation_date DESC LIMIT 10";
+$material_result = $valiant_db->query($material_query);
 
 echo "<div>";
-while ($row = mysqli_fetch_assoc($result)) 
+while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
 {
-    $enjoy = "SELECT count(*) as 'count' FROM enjoy WHERE parent = " . $row['id'];
-    $enjoy_count = mysqli_fetch_assoc(mysqli_query($conn, $enjoy));
+    $enjoy_query = "SELECT count(*) as 'count' FROM enjoy WHERE parent = " . $material_row['id'];
+    $enjoy_result = $valiant_db->query($enjoy_query);
+    $enjoy_count = $enjoy_result->fetch(PDO::FETCH_ASSOC);
 
     echo "
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
         <div class='panel panel-primary'>
             <div class='panel-heading'>
                 <div class='panel-title panel-left'>
-                " .	$row['title'] . "
+                " .	$material_row['title'] . "
                 </div>
-                <div class='enjoy'>
+                <div class='panel-right'>
                     <span class='enjoy-count'>";
                 
-                if ($enjoy_count['count'] > 0)
-                    echo $enjoy_count['count'];
-                    
-                echo "</span>
-                    <img class='not-yet' src='/images/enjoy.png'"; 
+    if ($enjoy_count['count'] > 0)
+        echo $enjoy_count['count'];
+
+    echo "</span>
+        <img class='";
     
-                if ($class_member)
-                    echo "onclick='enjoy(this, " . $row['id'] . ", " . $_SESSION['user_id'] . ");'";
+    if (isset($_SESSION['user_id'])) {
+        $enjoy_status_query = $enjoy_query . " AND enjoyed_by = " . $_SESSION['user_id'];
+        $enjoy_status_result = $valiant_db->query($enjoy_status_query);
+        $enjoy_status_count = $enjoy_status_result->fetch(PDO::FETCH_ASSOC);
+    
+        if($enjoy_status_count['count'])
+            echo "enjoy";
+        else
+            echo "no-enjoy";
+    }
+        
+    else
+        echo "no-enjoy";
+    
+    echo "' src='/images/enjoy.png'"; 
+
+    if ($class_member)
+        echo "onclick='enjoy(this, " . $material_row['id'] . ", " . $_SESSION['user_id'] . ");'";
+
+        echo "/>";
                     
-                    echo "/>";
-                    
-        echo "</div>
-            </div>
-            <div class='panel-body center'>
-            " .	$row['content'];
+    echo "</div>
+        </div>
+        <div class='panel-body center'>
+        " .	$material_row['content'];
 
     //get comments and insert them, but only if user is a student, teacher, or admin!
     if ($class_member)
     {
-        $comment_query = "SELECT content FROM comment WHERE parent = " . $row['id'];
-        $comments = mysqli_query($conn, $comment_query);
+        $comment_query = "SELECT content FROM comment WHERE parent = " . $material_row['id'];
+        $comment_result = $valiant_db->query($comment_query);
 
-        while ($comment = mysqli_fetch_assoc($comments))
-            echo "<div class='comment-box'>" . $comment['content'] . "</div>";
+        while ($comment_row = $comment_result->fetch(PDO::FETCH_ASSOC))
+            echo "<div class='comment-box'>" . $comment_row['content'] . "</div>";
 
         echo "<form method='post' action='comment.php'>
-                        <input type='hidden' name='parent' value='" . $row['id'] . "'/>
+                        <input type='hidden' name='parent' value='" . $material_row['id'] . "'/>
                         <textarea class='comment' rows='2' name='comment' placeholder='Have a comment?'></textarea>
                         <button class='btn btn-sm btn-default' type='submit'>Submit</button>
                     </form>";
@@ -139,7 +149,7 @@ while ($row = mysqli_fetch_assoc($result))
 }
 echo "</div>";
 
-$conn->close();
+$valiant_db = null;
 
 ?>
 
