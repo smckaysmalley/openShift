@@ -1,4 +1,4 @@
-<?php require( $_SERVER['DOCUMENT_ROOT'] . '/header.php'); ?>
+<?php require( $_SERVER['DOCUMENT_ROOT'] . '/header.php'); if (isset($_SESSION['firstname'])) {header("Location: /");}?>
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<div class="panel-title">
