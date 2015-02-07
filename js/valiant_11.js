@@ -44,7 +44,7 @@ function comment(element, prnt, usr) {
     }, function (response) {
         console.log(response);
                 var commentbox = $(element).siblings('.comments');
-                $(commentbox).append(response);
+                $(commentbox).html(response);
     });
     return false;
 }
