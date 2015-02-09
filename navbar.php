@@ -49,7 +49,7 @@
 			        	echo "<li role='presentation' class='dropdown'>
 							     <a class='dropdown-toggle' data-toggle='dropdown' href='#classes' role='button' aria-expanded='false'>" . $_SESSION["firstname"] . "<b class='caret'></b></a>
 							<ul class='dropdown-menu' role='menu'>
-								<li><a href='#'>My Account</a></li>";
+								<li><a href='/account'>My Account</a></li>";
 								if($_SESSION["admin"] || $_SESSION["student"] || $_SESSION["teacher"])
 									echo "<li><a href='/valiant_11'>Valiant 11</a></li>";
 							echo "<li><a href='/logout.php'>Logout</a></li>

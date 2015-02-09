@@ -70,4 +70,9 @@
     </div>
 </div>
 
+<script type="text/javascript" src="/js/skrollr.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>

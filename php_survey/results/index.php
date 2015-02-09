@@ -128,4 +128,6 @@
         echo '<div class="row center"><a class="center btn btn-default" href="../">Finish Survey!</a></div><br/>'; 
 ?>
 
+<script type="text/javascript" src="/js/fly-in.min.js"></script>
+
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>

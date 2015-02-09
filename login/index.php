@@ -7,7 +7,11 @@
 	</div>
 	<div class="panel-body">
 		<form class="form-horizontal" role="form" method="post" action="/login/auth.php">
-          <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['HTTP_REFERER']; ?>">
+         
+         <?php if (isset($_SERVER['HTTP_REFERER']))
+          echo "<input type='hidden' name='redirect_to' value='" . $_SERVER['HTTP_REFERER'] . "'>";
+            ?>
+          
 		  <div class="form-group">
 		    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-10">

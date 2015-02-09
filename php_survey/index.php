@@ -42,5 +42,6 @@
 </form>
 
 <script type="text/javascript" src="verify.js"></script>
+<script type="text/javascript" src="/js/fly-in.min.js"></script>
 
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>

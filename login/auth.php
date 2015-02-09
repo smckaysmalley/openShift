@@ -2,6 +2,10 @@
 session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
+if (isset($_POST['redirect_to']))
+    $redirect = $_POST['redirect_to'];
+else
+    $redirect = "/";
 $_SESSION["temp_email"] = $email;
 $_SESSION["temp_password"] = $password;
 
@@ -27,7 +31,7 @@ if ($email && $password)
 			$_SESSION["student"]   = $user_row['student'];
 			unset($_SESSION["temp_email"]);
 			unset($_SESSION["temp_password"]);
-			header("Location: " . $_POST['redirect_to']);
+			header("Location: " . $redirect);
 		}
 		else if ($user_query->rowCount() == 0)
 		{
@@ -49,7 +53,7 @@ if ($email && $password)
 	catch (Exception $e)
 	{
 		$_SESSION["error"] = "Query Failed... :( " . $e->getMEssage;
-		header("Location: " . $_POST['redirect_to']);
+		header("Location: /");
 	}
     
     //close the connection

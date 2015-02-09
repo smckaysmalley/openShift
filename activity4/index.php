@@ -1,6 +1,6 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
 <?php
-    include( $_SERVER['DOCUMENT_ROOT'] . '/localsetup.php');
+    include( $_SERVER['DOCUMENT_ROOT'] . '/environment_variables/local.php');
     $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
     $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
     $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');

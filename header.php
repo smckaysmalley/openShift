@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://mckaysmalley.com/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="/css/general.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
