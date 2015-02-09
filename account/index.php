@@ -23,12 +23,10 @@ echo "<span class='thumbnail profile_preview'>" . $profile_row['profile_picture'
     <input class="btn btn-primary btn-xs" type="submit" value="Upload Image" name="submit">
 </form>
 
-<!--
 <script>
     $("#fileToUpload").change(function () {
         $("#uploadFile").val(this.value);
     });
 </script>
--->
 
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
