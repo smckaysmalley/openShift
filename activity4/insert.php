@@ -1,7 +1,18 @@
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/header.php'); ?>
 
+<style>
+    #news {
+        display: none;
+    }
+</style>
+
+<div id="news" class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div id="message"></div>
+</div>
+
 <div class="well">
-    <form action="insert_db.php" method="post">
+    <section>
         Book: <input type="text" name="book"><br/>
         Chapter: <input type="text" name="chapter"><br/>
         Verse: <input type="text" name="verse"><br/>
@@ -18,8 +29,28 @@
             $faith_db = null;
             ?>
         </div>
-        <input class="btn btn-primary" type="submit">
-    </form>
+        <input class="btn btn-primary" onclick="addScripture();" type="submit">
+    </section>
 </div>
+
+<script>
+    function addScripture() {
+            $.post("insert_db.php", {
+                    book: $('input[name="book"]').val(),
+                    chapter: $('input[name="chapter"]').val(),
+                    verse: $('input[name="verse"]').val(),
+                    content: $('input[name="content"]').val()
+                }, function (response) {
+                if (response) {
+                    $('#message').html('Inserted!');
+                    $('#news').removeClass('alert-danger').addClass('alert-success').show();
+                }
+                else {
+                    $('#message').html('Failed');
+                    $('#news').removeClass('alert-success').addClass('alert-danger').show();
+                }
+            }
+                  )};
+</script>
 
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>

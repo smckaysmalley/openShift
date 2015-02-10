@@ -22,7 +22,9 @@ if (isset($_POST))
     }
 
     $faith_db = null;
-    header("Location: /activity4");
+    echo true;
 }
+else
+    echo false;
 
 ?>
