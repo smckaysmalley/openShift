@@ -43,6 +43,41 @@
     </div>
 </div>
 
+<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Account Information
+            </div>
+        </div>
+        <div class="panel-body center">
+            <form action="submit_changes.php" method="POST">
+                <div class="input-group">
+                    <span class="input-group-addon">First Name</span>
+                    <input class="form-control" type="text" name="firstname" value="<?php echo $_SESSION['firstname']; ?>">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Last Name</span>
+                    <input class="form-control" type="text" name="lastname" value="<?php echo $_SESSION['lastname']; ?>">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Email</span>
+                    <input class="form-control" type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Password</span>
+                    <input class="form-control" type="text" name="password">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Confirm</span>
+                    <input class="form-control" type="text" name="confirm">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Save Changes">
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
     function change() {
         $('.profile_picture').css('background-position', $('input[name="x"]').val() + '% ' + $('input[name="y"]').val() + '%');

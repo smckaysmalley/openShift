@@ -17,7 +17,7 @@
     }
     else 
     {
-        $sql = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+        $sql = $db->query('SELECT book, chapter, verse, content, t.name FROM scriptures s JOIN scripture_topic st ON st.scripture_id = s.id JOIN topics t ON st.topic_id = t.id');
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -27,7 +27,7 @@
             </div>
             <div class='panel-body'>";
     echo "<table class='table'>
-            <thead><tr><td>Book</td><td>Chapter</td><td>Verse</td><td>Content</td></thead>
+            <thead><tr><td>Book</td><td>Chapter</td><td>Verse</td><td>Content</td><td>Topic</td></thead>
             <tbody class='table-hover'>";
     
     foreach($result as $row)
@@ -48,4 +48,6 @@
 
     echo "</form>"
 ?>
+<br/><br/>
+<a href="insert.php" class="btn btn-primary">New Scripture</a>
 <?php require( $_SERVER[ 'DOCUMENT_ROOT'] . '/footer.php'); ?>
