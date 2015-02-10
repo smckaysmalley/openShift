@@ -19,7 +19,6 @@ if ($email && $password)
 		$user_query->execute(array(':email' => $email));
         $user_row = $user_query->fetch(PDO::FETCH_ASSOC);
 
-        echo $user_row;
 		if($user_query->rowCount() == 1 && $user_row['password'] == $password)
 		{
 			$_SESSION["user_id"]   = $user_row['id'];
@@ -29,6 +28,9 @@ if ($email && $password)
 			$_SESSION["admin"]     = $user_row['admin'];
             $_SESSION["teacher"]   = $user_row['teacher'];
 			$_SESSION["student"]   = $user_row['student'];
+            
+            require($_SERVER['DOCUMENT_ROOT'] . "/account/change_profile_picture.php");
+            
 			unset($_SESSION["temp_email"]);
 			unset($_SESSION["temp_password"]);
 			header("Location: " . $redirect);

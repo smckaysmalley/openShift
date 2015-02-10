@@ -15,13 +15,25 @@
 	filter: alpha(opacity=0);
 }
 
+.align-right {
+    text-align: right;
+}
+
+.nav-profile {
+    width: 40px;
+    float: left;
+}
+
 .profile_preview {
     width:100px;
 }
 
 .profile_picture {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .label {

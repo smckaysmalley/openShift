@@ -34,7 +34,7 @@ else if($_POST["password"] == $_POST["confirm"]) {
         $id_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email']));
         $id_row = $id_query->fetch(PDO::FETCH_ASSOC);
 
-        $_SESSION["id"]        = $id_row['id'];
+        $_SESSION["user_id"]        = $id_row['id'];
         $_SESSION["firstname"] = $_POST["firstname"];
         $_SESSION["lastname"]  = $_POST["lastname"];
         $_SESSION["email"]     = $_POST["email"];
@@ -42,12 +42,18 @@ else if($_POST["password"] == $_POST["confirm"]) {
         $_SESSION["admin"]     = 0;
         $_SESSION["teacher"]   = 0;
         $_SESSION["message"]   = "Welcome aboard " . $_POST["firstname"] . "!";
+        
+        $picture_query = "INSERT INTO profile_picture (filename, positionX, positionY, active, uploaded_by, creation_date) VALUES ('default_profile.jpg', 50, 50, 1, " . $_SESSION['user_id'] . ", NOW())";
+        $valiant_db->query($picture_query);
+        
+        require($_SERVER['DOCUMENT_ROOT'] . "/account/change_profile_picture.php");
 
         unset($_SESSION["temp_firstname"]);
         unset($_SESSION["temp_lastname"]);
         unset($_SESSION["temp_email"]);
         unset($_SESSION["temp_password"]);
 
+        $valiant_db = null;
         header('Location: /');
     }
     
