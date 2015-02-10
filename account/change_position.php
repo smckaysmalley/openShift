@@ -16,6 +16,7 @@ if (isset($_POST))
         echo $e->getMessage();
     }
     
+    $_SESSION['message'] = "Position saved.";
     header("Location: /account");
 }
 
