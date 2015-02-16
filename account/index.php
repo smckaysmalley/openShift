@@ -66,11 +66,11 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Password</span>
-                    <input class="form-control" type="text" name="password">
+                    <input class="form-control" type="password" name="password">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Confirm</span>
-                    <input class="form-control" type="text" name="confirm">
+                    <input class="form-control" type="password" name="confirm">
                 </div>
                 <input class="btn btn-primary" type="submit" value="Save Changes">
             </form>
