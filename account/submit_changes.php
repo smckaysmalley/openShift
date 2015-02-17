@@ -24,10 +24,12 @@ if ($_POST['password'] == $_POST['confirm'])
     $pass_result = $valiant_db->query($pass_query);
     $pass_row = $pass_result->fetch(PDO::FETCH_ASSOC);
     
+    require($_SERVER['DOCUMENT_ROOT'] . '/password.php');
+    
     if ($_POST['password'] == '')
         $password = $pass_row['password'];
     else
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
     $user_insert = $valiant_db->prepare("UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE id = " . $_SESSION['user_id']);
     $user_insert->execute(array(':firstname' => $firstname, ':lastname' => $lastname, ':email' => $email, ':password' => $password));

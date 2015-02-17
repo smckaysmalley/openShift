@@ -1,8 +1,13 @@
 <?php
 session_start();
 
-if ($_POST["student"])
-    $student = 1;
+if (isset($_POST['student']))
+{
+    if ($_POST["student"])
+        $student = 1;
+    else
+        $student = 0;
+}
 else
     $student = 0;
 
@@ -26,9 +31,13 @@ if ($email_query->rowCount() != 0) {
 
 else if($_POST["password"] == $_POST["confirm"]) {
     
+    require($_SERVER['DOCUMENT_ROOT'] . '/password.php');
+    
+    $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    
     try {
         $create_query = $valiant_db->prepare("INSERT INTO user (firstname, lastname, email, student, teacher, admin, password, creation_date) VALUES (:firstname, :lastname, :email, :student, 0, 0, :password, NOW())");
-        $create_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email'], ':student' => $student, ':password' => $_POST['password']));
+        $create_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email'], ':student' => $student, ':password' => $passwordHash));
         
         $id_query = $valiant_db->prepare("SELECT id FROM user WHERE firstname = :firstname AND lastname = :lastname AND email = :email");
         $id_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email']));

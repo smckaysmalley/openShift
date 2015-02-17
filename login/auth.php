@@ -18,8 +18,10 @@ if ($email && $password)
 	{
 		$user_query->execute(array(':email' => $email));
         $user_row = $user_query->fetch(PDO::FETCH_ASSOC);
+        
+        require($_SERVER['DOCUMENT_ROOT'] . '/password.php');
 
-		if($user_query->rowCount() == 1 && $user_row['password'] == $password)
+		if($user_query->rowCount() == 1 && password_verify($password, $user_row['password']))
 		{
 			$_SESSION["user_id"]   = $user_row['id'];
 			$_SESSION["firstname"] = $user_row['firstname'];
