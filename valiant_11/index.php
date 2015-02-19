@@ -71,12 +71,12 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
     //get comments and insert them, but only if user is a student, teacher, or admin!
     if ($class_member)
     {
-        $comment_query = "SELECT content FROM comment WHERE parent = " . $material_row['id'];
+        $comment_query = "SELECT c.content, u.firstname FROM comment c JOIN user u ON c.commented_by = u.id WHERE c.parent = " . $material_row['id'];
         $comment_result = $valiant_db->query($comment_query);
 
         echo "<div class='comments'>";
         while ($comment_row = $comment_result->fetch(PDO::FETCH_ASSOC))
-            echo "<div class='comment-box'>" . $comment_row['content'] . "</div>";
+            echo "<div class='comment-box'>" . $comment_row['firstname'] . ": " . $comment_row['content'] . "</div>";
         echo "</div>";
 
         echo "
