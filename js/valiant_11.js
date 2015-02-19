@@ -34,17 +34,24 @@ function archive(element, item) {
 }
 
 function comment(element, prnt, usr) {
+
     var comment_box = $(element).siblings('textarea[name="comment"]');
     var comment = $(comment_box).val();
+    var cnt = $(".comments .comment-box").length;
     $(comment_box).val("");
+
     $.post('/valiant_11/comment.php', {
         parent: prnt,
         user: usr,
-        comment: comment
+        comment: comment,
+        count: cnt
     }, function (response) {
-        console.log(response);
-                var commentbox = $(element).siblings('.comments');
-                $(commentbox).append(response);
+        var commentbox = $(element).siblings('.comments');
+        var new_comment = $(response).hide();
+        $(commentbox).append(new_comment);
+        $(new_comment).show('slow');
+        
+        
+        
     });
-    return false;
 }
