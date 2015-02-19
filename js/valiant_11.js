@@ -49,7 +49,7 @@ function comment(element, prnt, usr) {
         var commentbox = $(element).siblings('.comments');
         var new_comment = $(response).hide();
         $(commentbox).append(new_comment);
-        $(new_comment).show('slow');
+        $(new_comment).show(250);
         
         
         
