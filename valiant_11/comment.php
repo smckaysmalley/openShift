@@ -22,6 +22,8 @@ if (isset($_POST['comment']))
     $comment_query = "SELECT temp.content, u.firstname FROM (SELECT content, creation_date, commented_by FROM comment c WHERE parent = " . $_POST['parent'] . " ORDER BY creation_date DESC LIMIT " . $limit . ") temp JOIN user u ON u.id = temp.commented_by ORDER BY temp.creation_date ASC";
     $comment_result = $valiant_db->query($comment_query);
     
+    //echo "<div class='comment-box'> counts: " . $comment_query . "</div>";
+    
     while ($comment = $comment_result->fetch(PDO::FETCH_ASSOC))
     {
         echo "<div class='comment-box'>" . $comment['firstname'] . ': ' . $comment['content'] . "</div>";

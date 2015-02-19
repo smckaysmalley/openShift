@@ -37,7 +37,7 @@ function comment(element, prnt, usr) {
 
     var comment_box = $(element).siblings('textarea[name="comment"]');
     var comment = $(comment_box).val();
-    var cnt = $(".comments .comment-box").length;
+    var cnt = $(element).siblings(".comments").children('.comment-box').length;
     $(comment_box).val("");
 
     $.post('/valiant_11/comment.php', {
