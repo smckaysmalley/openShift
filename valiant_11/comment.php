@@ -22,12 +22,10 @@ if (isset($_POST['comment']))
     $comment_query = "SELECT temp.content FROM (SELECT content, creation_date FROM comment c WHERE parent = " . $_POST['parent'] . " ORDER BY creation_date DESC LIMIT " . $limit . ") temp ORDER BY temp.creation_date ASC";
     $comment_result = $valiant_db->query($comment_query);
     
-    echo "<div class='comment-box'>" . $comment_query . "</div>";
-    
-//    while ($comment = $comment_result->fetch(PDO::FETCH_ASSOC))
-//    {
-//        echo "<div class='comment-box'>" . $comment['content'] . "</div>";
-//    }
+    while ($comment = $comment_result->fetch(PDO::FETCH_ASSOC))
+    {
+        echo "<div class='comment-box'>" . $comment['content'] . "</div>";
+    }
     
     //close the connection
     $valiant_db = null;
