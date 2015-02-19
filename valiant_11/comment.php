@@ -21,13 +21,12 @@ if (isset($_POST['comment']))
     //returns all new comments
     $comment_query = "SELECT temp.content FROM (SELECT content, creation_date FROM comment c WHERE parent = " . $_POST['parent'] . " ORDER BY creation_date DESC LIMIT " . $limit . ") temp ORDER BY temp.creation_date ASC";
     $comment_result = $valiant_db->query($comment_query);
-    $comments = $comment_result->fetchAll(PDO::FETCH_ASSOC);
     
-    var_dump($comments);
+    echo "<div class='comment-box'>" . $comment_query . "</div>";
     
-//    foreach($comments as $row)
+//    while ($comment = $comment_result->fetch(PDO::FETCH_ASSOC))
 //    {
-//        echo "<div class='comment-box'>" . $row['content'] . "</div>";
+//        echo "<div class='comment-box'>" . $comment['content'] . "</div>";
 //    }
     
     //close the connection
