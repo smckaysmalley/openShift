@@ -12,10 +12,10 @@ else
     $student = 0;
 
 
-$_SESSION["temp_lastname"]  = $_POST["lastname"];
-$_SESSION["temp_firstname"] = $_POST["firstname"];
-$_SESSION["temp_email"]     = $_POST["email"];
-$_SESSION["temp_password"]  = $_POST["password"];
+$_SESSION["temp_lastname"]  = htmlspecialchars($_POST["lastname"]);
+$_SESSION["temp_firstname"] = htmlspecialchars($_POST["firstname"]);
+$_SESSION["temp_email"]     = htmlspecialchars($_POST["email"]);
+$_SESSION["temp_password"]  = htmlspecialchars($_POST["password"]);
 
 require($_SERVER['DOCUMENT_ROOT'] . "/valiant_11/connect_to_db.php");
 
@@ -33,24 +33,28 @@ else if($_POST["password"] == $_POST["confirm"]) {
     
     require($_SERVER['DOCUMENT_ROOT'] . '/password.php');
     
-    $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $passwordHash = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
+    
+    $firstname = htmlspecialchars($_POST['firstname']);
+    $lastname = htmlspecialchars($_POST['lastname']);
+    $email = htmlspecialchars($_POST['email']);
     
     try {
         $create_query = $valiant_db->prepare("INSERT INTO user (firstname, lastname, email, student, teacher, admin, password, creation_date) VALUES (:firstname, :lastname, :email, :student, 0, 0, :password, NOW())");
-        $create_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email'], ':student' => $student, ':password' => $passwordHash));
+        $create_query->execute(array(':firstname' => $firstname, ':lastname' => $lastname, ':email' => $email, ':student' => $student, ':password' => $passwordHash));
         
         $id_query = $valiant_db->prepare("SELECT id FROM user WHERE firstname = :firstname AND lastname = :lastname AND email = :email");
         $id_query->execute(array(':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':email' => $_POST['email']));
         $id_row = $id_query->fetch(PDO::FETCH_ASSOC);
 
         $_SESSION["user_id"]        = $id_row['id'];
-        $_SESSION["firstname"] = $_POST["firstname"];
-        $_SESSION["lastname"]  = $_POST["lastname"];
-        $_SESSION["email"]     = $_POST["email"];
+        $_SESSION["firstname"] = $firstname;
+        $_SESSION["lastname"]  = $lastname;
+        $_SESSION["email"]     = $email;
         $_SESSION["student"]   = $student;
         $_SESSION["admin"]     = 0;
         $_SESSION["teacher"]   = 0;
-        $_SESSION["message"]   = "Welcome aboard " . $_POST["firstname"] . "!";
+        $_SESSION["message"]   = "Welcome aboard " . $firstname . "!";
         
         $picture_query = "INSERT INTO profile_picture (filename, positionX, positionY, active, uploaded_by, creation_date) VALUES ('default_profile.jpg', 50, 50, 1, " . $_SESSION['user_id'] . ", NOW())";
         $valiant_db->query($picture_query);

@@ -8,17 +8,17 @@ if ($_POST['password'] == $_POST['confirm'])
     if ($_POST['firstname'] == '')
         $firstname = $_SESSION['firstname'];
     else
-        $firstname = $_POST['firstname'];
+        $firstname = htmlspecialchars($_POST['firstname']);
     
     if ($_POST['lastname'] == '')
         $lastname = $_SESSION['lastname'];
     else
-        $lastname = $_POST['lastname'];
+        $lastname = htmlspecialchars($_POST['lastname']);
     
     if ($_POST['email'] == '')
         $email = $_SESSION['email'];
     else
-        $email = $_POST['email'];
+        $email = htmlspecialchars($_POST['email']);
     
     $pass_query = "SELECT password FROM user WHERE id = " . $_SESSION['user_id'];
     $pass_result = $valiant_db->query($pass_query);
@@ -29,7 +29,7 @@ if ($_POST['password'] == $_POST['confirm'])
     if ($_POST['password'] == '')
         $password = $pass_row['password'];
     else
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
     
     $user_insert = $valiant_db->prepare("UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE id = " . $_SESSION['user_id']);
     $user_insert->execute(array(':firstname' => $firstname, ':lastname' => $lastname, ':email' => $email, ':password' => $password));
