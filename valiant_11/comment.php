@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-if (isset($_POST))
+if (isset($_POST['comment']))
 {
     require('connect_to_db.php');
     
@@ -31,5 +31,7 @@ if (isset($_POST))
     //close the connection
     $valiant_db = null;
 }
+else
+    echo "You need to use me the right way!";
 
 ?>
