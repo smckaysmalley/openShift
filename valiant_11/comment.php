@@ -23,10 +23,12 @@ if (isset($_POST['comment']))
     $comment_result = $valiant_db->query($comment_query);
     $comments = $comment_result->fetchAll(PDO::FETCH_ASSOC);
     
-    foreach($comments as $row)
-    {
-        echo "<div class='comment-box'>" . $row['content'] . "</div>";
-    }
+    var_dump($comments);
+    
+//    foreach($comments as $row)
+//    {
+//        echo "<div class='comment-box'>" . $row['content'] . "</div>";
+//    }
     
     //close the connection
     $valiant_db = null;
