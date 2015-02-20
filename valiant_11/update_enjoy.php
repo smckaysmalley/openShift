@@ -4,7 +4,7 @@ session_start();
 
 require('connect_to_db.php');
 
-$new_query = "SELECT DISTINCT parent FROM enjoy WHERE creation_date > TIMESTAMP(NOW()-INTERVAL 5 SECOND)";
+$new_query = "SELECT DISTINCT parent FROM enjoy WHERE creation_date > TIMESTAMP(NOW()-INTERVAL 3 SECOND)";
 $new_result = $valiant_db->query($new_query);
 
 $row_count = $new_result->rowCount();

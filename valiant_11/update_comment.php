@@ -4,7 +4,7 @@ session_start();
 
 require('connect_to_db.php');
 
-$new_query = "SELECT temp.parent, u.firstname, temp.content  FROM (SELECT content, parent, commented_by, creation_date FROM comment c WHERE creation_date > TIMESTAMP(NOW()-INTERVAL 5 SECOND) AND commented_by != " . $_SESSION['user_id'] . ") temp JOIN user u ON temp.commented_by = u.id ORDER BY temp.creation_date";
+$new_query = "SELECT temp.parent, u.firstname, temp.content  FROM (SELECT content, parent, commented_by, creation_date FROM comment c WHERE creation_date > TIMESTAMP(NOW()-INTERVAL 2 SECOND) AND commented_by != " . $_SESSION['user_id'] . ") temp JOIN user u ON temp.commented_by = u.id ORDER BY temp.creation_date";
 $new_result = $valiant_db->query($new_query);
 
 $row_count = $new_result->rowCount();

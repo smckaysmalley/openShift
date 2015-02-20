@@ -63,7 +63,7 @@ function comment(element, prnt, usr) {
 function start_update() {
     setInterval(function () {
         update_interaction();
-    }, 5000);
+    }, 2000);
 }
 
 function update_interaction() {
@@ -84,10 +84,7 @@ function update_interaction() {
             var enjoys = JSON.parse(response);
 
             for (var i = 0; i < enjoys.length; i++) {
-                var element = $('#enjoy' + enjoys[i]['parent'])
-                $(element).hide();
-                $(element).html(enjoys[i]['enjoys']);
-                $(element).show();
+                $('#enjoy' + enjoys[i]['parent']).html(enjoys[i]['enjoys']);
             }
         }
     });
