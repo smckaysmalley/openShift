@@ -37,6 +37,10 @@ function comment(element, prnt, usr) {
 
     var comment_box = $(element).siblings('textarea[name="comment"]');
     var comment = $(comment_box).val();
+
+    if (comment === null || comment == "")
+        return;
+
     var cnt = $(element).siblings(".comments").children('.comment-box').length;
     $(comment_box).val("");
 
@@ -50,8 +54,41 @@ function comment(element, prnt, usr) {
         var new_comment = $(response).hide();
         $(commentbox).append(new_comment);
         $(new_comment).show(250);
-        
-        
-        
+
+
+
+    });
+}
+
+function start_update() {
+    setInterval(function () {
+        update_interaction();
+    }, 5000);
+}
+
+function update_interaction() {
+    $.post('/valiant_11/update_comment.php', {}, function (response) {
+        if (response != "") {
+            var comments = JSON.parse(response);
+
+            for (var i = 0; i < comments.length; i++) {
+                var new_comment = $(comments[i].content).hide()
+                $('#comment' + comments[i].parent).append(new_comment);
+                $(new_comment).show(250);
+            }
+        }
+    });
+
+    $.post('/valiant_11/update_enjoy.php', {}, function (response) {
+        if (response != "") {
+            var enjoys = JSON.parse(response);
+
+            for (var i = 0; i < enjoys.length; i++) {
+                var element = $('#enjoy' + enjoys[i]['parent'])
+                $(element).hide();
+                $(element).html(enjoys[i]['enjoys']);
+                $(element).show();
+            }
+        }
     });
 }

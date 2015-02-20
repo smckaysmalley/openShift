@@ -34,7 +34,7 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
                 " .	$material_row['title'] . "
                 </div>
                 <div class='panel-right'>
-                    <span class='enjoy-count badge'>";
+                    <span class='enjoy-count badge' id='enjoy" . $material_row['id'] . "'>";
                 
     if ($enjoy_count['count'] > 0)
         echo $enjoy_count['count'];
@@ -74,7 +74,7 @@ while ($material_row = $material_result->fetch(PDO::FETCH_ASSOC))
         $comment_query = "SELECT c.content, u.firstname FROM comment c JOIN user u ON c.commented_by = u.id WHERE c.parent = " . $material_row['id'];
         $comment_result = $valiant_db->query($comment_query);
 
-        echo "<div class='comments'>";
+        echo "<div class='comments' id='comment" . $material_row['id'] . "'>";
         while ($comment_row = $comment_result->fetch(PDO::FETCH_ASSOC))
             echo "<div class='comment-box'>" . $comment_row['firstname'] . ": " . $comment_row['content'] . "</div>";
         echo "</div>";
@@ -91,6 +91,6 @@ $valiant_db = null;
 
 ?>
 
-<script type="text/javascript" src="/js/valiant_11.js"></script>
+<script type="text/javascript" src="/js/valiant_11.js" onload="start_update();"></script>
 
 <?php require( $_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
