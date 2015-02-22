@@ -2,7 +2,7 @@
 if (!isset($_SESSION['admin'])) {
     header("Location: /valiant_11");
 }
-else if (!$_SESSION["admin"] || !$_SESSION["teacher"]) {
+else if (!$_SESSION["admin"] && !$_SESSION["teacher"]) {
     header("Location: /valiant_11");
 }
 ?>

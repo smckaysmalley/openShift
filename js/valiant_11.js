@@ -54,9 +54,6 @@ function comment(element, prnt, usr) {
         var new_comment = $(response).hide();
         $(commentbox).append(new_comment);
         $(new_comment).show(250);
-
-
-
     });
 }
 
